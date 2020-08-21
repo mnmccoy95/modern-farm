@@ -8,32 +8,32 @@ console.log("this is the plan", yearlyPlan)
 
 import { createAsparagus } from "./seeds/asparagus.js"
 
-const asparagusSeed = createAsparagus()
+// const asparagusSeed = createAsparagus()
 // console.log(asparagusSeed)
 
 import { createCorn } from "./seeds/corn.js"
 
-const cornSeed = createCorn()
+// const cornSeed = createCorn()
 // console.log(cornSeed)
 
 import { createPotato } from "./seeds/potato.js"
 
-const potatoSeed = createPotato()
+// const potatoSeed = createPotato()
 // console.log(potatoSeed)
 
 import { createSunflower } from "./seeds/sunflower.js"
 
-const sunflowerSeed = createSunflower()
+// const sunflowerSeed = createSunflower()
 // console.log(sunflowerSeed)
 
 import { createSoybean } from "./seeds/soybean.js"
 
-const soybeanSeed = createSoybean()
+// const soybeanSeed = createSoybean()
 // console.log(soybeanSeed)
 
 import { createWheat } from "./seeds/wheat.js"
 
-const wheatSeed = createWheat()
+// const wheatSeed = createWheat()
 // console.log(wheatSeed)
 
 
@@ -41,6 +41,7 @@ const wheatSeed = createWheat()
 import { usePlants } from "./field.js"
 import { plantSeeds } from "./tractor.js"
 import { harvestPlants } from "./harvester.js"
+
 
 plantSeeds(yearlyPlan)
 
@@ -69,5 +70,6 @@ const HTML = () => {
         ${cropHTMLRepresentation}
     `
 }
+
 
 HTML()
