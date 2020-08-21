@@ -1,11 +1,32 @@
 
-export const harvestPlants = (plantsInField) => {
-
-    for (const obj of plantsInField) {
-        if (obj.output === 2) {
-            plantsInField.push(obj)
+export const harvestPlants = (plantedSeeds) => {
+    const harvestedSeeds = []
+    let objOrder = 0;
+    let outputOrder = 0;
+    for (let n = 0; n < plantedSeeds.length; n++) {
+        objOrder = objOrder + outputOrder;
+        if (plantedSeeds[n].type === "corn") {
+            outputOrder = (plantedSeeds[n].output)/2;
+            for (let m = 1; m <= outputOrder; m++) {
+                const obj = {};
+                obj.type = plantedSeeds[n].type;
+                obj.height = plantedSeeds[n].height;
+                obj.output = plantedSeeds[n].output;
+                obj.id = objOrder + m;
+                harvestedSeeds.push(obj);
+            }
         }
-
-    }
-
+            else {
+                outputOrder = plantedSeeds[n].output;
+                for (let m = 1; m <= outputOrder; m++){
+                    const obj = {};
+                    obj.type = plantedSeeds[n].type;
+                    obj.height = plantedSeeds[n].height;
+                    obj.output = plantedSeeds[n].output;
+                    obj.id = objOrder + m;
+                    harvestedSeeds.push(obj);
+                }
+            }
+        }
+    return harvestedSeeds;
 }
