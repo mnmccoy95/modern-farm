@@ -1,10 +1,8 @@
-const asparagusProperties = [
-    {type: "asparagus",
+const asparagusProperties = 
+    {type: "Asparagus",
     height: 24,
-    output: 4,}
-    
-];
+    output: 4,};
 
 export const createAsparagus = () => {
-    return asparagusProperties.slice()
+    return asparagusProperties
 }
