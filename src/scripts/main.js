@@ -42,21 +42,34 @@ import { usePlants } from "./field.js"
 import { plantSeeds } from "./tractor.js"
 import { harvestPlants } from "./harvester.js"
 
-// console.log("the plants in the field are", thing)
 
 plantSeeds(yearlyPlan)
 
-const plantedSeeds = usePlants()
+const plantsInField = usePlants()
 
-console.log(plantedSeeds)
+console.log("the plants in the field are", plantsInField)
 
-harvestPlants(plantedSeeds)
+harvestPlants(plantsInField)
 
-const harvestedPlants = harvestPlants(plantedSeeds)
-console.log("the harvested amount is", harvestedPlants)
+const harvestedPlants = harvestPlants(plantsInField)
 
-
-// harvestPlants(plantedSeeds)
+console.log("the harvested amount", harvestedPlants)
 
 
+import { Catalog } from "./catalog.js"
 
+const HTML = () => {
+    const contentElement = document.querySelector(".container")
+
+    let cropHTMLRepresentation = "";
+    for (const crops of harvestedPlants) {
+        cropHTMLRepresentation += Catalog(crops);
+    }
+
+    contentElement.innerHTML += `
+        ${cropHTMLRepresentation}
+    `
+}
+
+
+HTML()
