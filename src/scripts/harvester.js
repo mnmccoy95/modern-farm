@@ -4,7 +4,7 @@ export const harvestPlants = (plantedSeeds) => {
     let outputOrder = 0;
     for (let n = 0; n < plantedSeeds.length; n++) {
         objOrder = objOrder + outputOrder;
-        if (plantedSeeds[n].type === "corn") {
+        if (plantedSeeds[n].type === "Corn") {
             outputOrder = (plantedSeeds[n].output)/2;
             for (let m = 1; m <= outputOrder; m++) {
                 const obj = {};
