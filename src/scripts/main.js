@@ -39,20 +39,35 @@ const wheatSeed = createWheat()
 
 
 import { usePlants } from "./field.js"
-
-
-
 import { plantSeeds } from "./tractor.js"
+import { harvestPlants } from "./harvester.js"
 
 plantSeeds(yearlyPlan)
 
-const thing = usePlants()
+const plantsInField = usePlants()
 
-console.log("the plants in the field are", thing)
+console.log("the plants in the field are", plantsInField)
 
-import { harvestPlants } from "./harvester.js"
+harvestPlants(plantsInField)
 
-harvestPlants(thing)
+const harvestedPlants = harvestPlants(plantsInField)
 
-console.log("the plants harvested are", )
+console.log("the harvested amount", harvestedPlants)
 
+
+import { Catalog } from "./catalog.js"
+
+const HTML = () => {
+    const contentElement = document.querySelector(".container")
+
+    let cropHTMLRepresentation = "";
+    for (const crops of harvestedPlants) {
+        cropHTMLRepresentation += Catalog(crops);
+    }
+
+    contentElement.innerHTML += `
+        ${cropHTMLRepresentation}
+    `
+}
+
+HTML()
