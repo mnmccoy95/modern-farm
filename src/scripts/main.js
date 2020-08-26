@@ -54,6 +54,17 @@ const harvestedPlants = harvestPlants(plantsInField)
 
 console.log("the harvested amount", harvestedPlants)
 
+const alphaHarvest = harvestedPlants.map(harvestObj => {
+    return harvestObj.type
+})
+
+const alphabetHarvest = alphaHarvest.sort()
+console.log(alphabetHarvest)
+
+const emojiHarvest = harvestedPlants.map(harvestObj => {
+    return harvestObj.icon
+})
+console.log(emojiHarvest)
 
 import { Catalog } from "./catalog.js"
 
@@ -61,7 +72,7 @@ const HTML = () => {
     const contentElement = document.querySelector(".container")
 
     let cropHTMLRepresentation = "";
-    for (const crops of harvestedPlants) {
+    for (const crops of emojiHarvest) {
         cropHTMLRepresentation += Catalog(crops);
     }
 

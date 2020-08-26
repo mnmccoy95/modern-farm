@@ -11,6 +11,7 @@ export const harvestPlants = (plantedSeeds) => {
                 obj.type = plantedSeeds[n].type;
                 obj.height = plantedSeeds[n].height;
                 obj.output = plantedSeeds[n].output;
+                obj.icon = plantedSeeds[n].icon;
                 obj.id = objOrder + m;
                 harvestedSeeds.push(obj);
             }
@@ -22,6 +23,7 @@ export const harvestPlants = (plantedSeeds) => {
                     obj.type = plantedSeeds[n].type;
                     obj.height = plantedSeeds[n].height;
                     obj.output = plantedSeeds[n].output;
+                    obj.icon = plantedSeeds[n].icon;
                     obj.id = objOrder + m;
                     harvestedSeeds.push(obj);
                 }
