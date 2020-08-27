@@ -41,6 +41,8 @@ import { createWheat } from "./seeds/wheat.js"
 import { usePlants } from "./field.js"
 import { plantSeeds } from "./tractor.js"
 import { harvestPlants } from "./harvester.js"
+import {counter} from "./counter.js"
+import {counterHTML} from "./counter.js"
 
 
 plantSeeds(yearlyPlan)
@@ -82,5 +84,17 @@ const HTML = () => {
     `
 }
 
+// HTML()
 
-HTML()
+const seedAmount = counter(alphabetHarvest)
+console.log(seedAmount)
+let html = counterHTML(seedAmount)
+console.log(html)
+const htmlList = () => {
+    const seedElement = document.querySelector(".messages")
+    seedElement.innerHTML = `
+        ${html}
+    `
+}
+htmlList()
+
